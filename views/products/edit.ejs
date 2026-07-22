@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+    <div class="col-8 offset-2">
+     <h2>Edit your Product</h2>
+    <form action="/products/<%= product._id %>?_method=PUT" method="POST" novalidate class="needs-validation"enctype="multipart/form-data">
+         <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+        <input name="product[name]" value="<%= product.name %>" type="text" class="form-control" required/>
+        </div>
+
+         <div class="mb-3">
+             <label for="category" class="form-label">Category</label>
+        <input name="product[category]"  value="<%= product.category %>" type="text" class="form-control" required/>
+        </div>
+
+        <div class="mb-3">
+         <label for="brand" class="form-label">Brand</label>
+            <input name="product[brand]"  value="<%= product.brand %>" type="text"  class="form-control" required/>
+        </div>
+       
+       <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+        <textarea name="product[description]" class="form-control"><%= product.description %></textarea>
+        </div>
+           
+        <div class="row">
+        <div class="mb-3 col-6">
+             <label for="price" class="form-label">Price</label>
+        <input name="product[price]" value="<%= product.price %>" type="number" class="form-control"/>
+        </div>
+
+        <div class="mb-3 col-6">
+             <label for="stock" class="form-label">Stock</label>
+        <input name="product[stock]"  value="<%= product.stock %>" type="number" class="form-control" />
+        </div>
+</div>
+
+     <div class="mb-3">
+          Original Product Image <br/>
+          <img src="<%= originalImageUrl %>" />
+     </div>
+
+        <div class="mb-3">
+             <label for="image" class="form-label">Edit Image</label>
+        <input name="product[image]" type="file" class="form-control"/>
+        <br /> <br />
+        <button class="btn btn-dark">Update Product Information</button>
+    </form>
+    </div>
+</div>
+<script src="/js/script.js"></script>

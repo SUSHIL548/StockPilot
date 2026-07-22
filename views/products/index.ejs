@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate") %>
+
+  <h2>All Products</h2>
+   <!--<form method="GET" action="/products/new">
+    <button>Enter New Product</button>
+   </form>-->
+     
+   <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+
+      <% for (let product of allProducts) { %>
+        <a href="/products/<%= product._id %>" class="listing-link">
+<div class="card col">
+  <img src="<%= product.image.url %>" class="card-img-top" alt="product_image" style="height: 20rem">
+  <div class="card-body">
+    <p class="card-text">
+       <b> <%= product.name %> </b> <br/>
+        &#8377; <%= product.price.toLocaleString("en-IN") %> 
+    </p>
+  </div>
+ </div>
+ <% } %> 
+</div>
+   
+
+
+

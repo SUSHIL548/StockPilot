@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row  mt-3">
+    <div class="col-8 offset-2"
+    <h2>Product Details </h2>
+    </div>
+<div class="card col-6 offset-3">
+    <img src="<%= product.image.url %>" class="card-img-top show-img" alt="product_image">
+    <div class="card-body">
+    <p class="card text"></p>    
+    </div>
+</div>
+
+
+    <ul>
+        <li><%= product.name %> </li>
+         <li><%= product.category %> </li>
+          <li><%= product.brand %> </li>
+           <li><%= product.description %> </li>
+            <li> &#8377; <%= product.price.toLocaleString("en-IN") %> </li>
+             <li><%= product.stock %> </li>
+              <li><%= product.image %> </li>
+               <li><%= product.createdAt %> </li>
+    </ul>
+    
+
+    
+    <div class="btns">
+    <a href="/products/<%= product._id %>/edit" class="btn btn-dark col-2">Edit your Product</a>
+
+
+    <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+   <button class="btn btn-dark col-12 offset-2 ">Delete your product</button>
+   <br/><br/>
+   </form>
+</div>
+</div>
+
+

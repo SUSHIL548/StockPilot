@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+    <div class="col-8 offset-2">
+    <h3>Enter a New Product</h3>
+    <form method="POST" action="/products" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input name="product[name]" placeholder="enter product name" type="text" class="form-control"required/>
+       </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+        <input name="product[category]" placeholder="enter  category" type="text" class="form-control"required />
+        </div>
+        
+        <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+        <input name="product[brand]" placeholder="enter  brand" type="text" class="form-control"required />
+       </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+        <textarea name="product[description]" placeholder="enter  description" class="form-control" required></textarea>
+       </div>
+        
+       <div class="row">
+       <div class="mb-3 col-6">
+        <label for="price" class="form-label">Price</label>
+        <input name="product[price]" placeholder="enter product price" class="form-control" required/>
+        <div class="invalid-feedback">Please enter the Valid Price</div>
+    </div>
+
+    <div class="mb-3 col-6">
+        <label for="stock" class="form-label">Stock</label>
+        <input name="product[stock]" placeholder="enter stock available" class="form-control" required/>
+    </div>
+</div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Product Image</label>
+        <input name="product[image]" type="file" class="form-control" />
+     required      
+    </div> 
+       <br/> <br/>
+        <button class="btn btn-dark">Add new Product</button>
+        <br/>
+        <br/>
+    </form>
+    </div>
+</div>
