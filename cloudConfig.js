@@ -10,21 +10,14 @@ console.log("Cloudinary ENV:", {
         : null
 });
 
-const testParams = {
-    allowed_formats: "png,jpg,jpeg",
-    folder: "stockpilot_DEV",
-    timestamp: 1786199174,
-};
-
-const testSignature = cloudinary.utils.api_sign_request(
-    testParams,
-    process.env.CLOUD_API_SECRET
-);
-
-console.log("TEST SIGNATURE:", testSignature);
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET
+});
 
 const storage = new CloudinaryStorage({
-    cloudinary: cloudinary,
+    cloudinary,
     params: {
         folder: "stockpilot_DEV",
         allowed_formats: ["png", "jpg", "jpeg"],
@@ -35,3 +28,5 @@ module.exports = {
     cloudinary,
     storage,
 };
+
+
