@@ -23,10 +23,11 @@ const storage = new CloudinaryStorage({
         allowed_formats: ["png", "jpg", "jpeg", "webp"],
     },
 });
-6
+
 module.exports = {
     cloudinary,
     storage,
 };
+
 
 
