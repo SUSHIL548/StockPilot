@@ -13,8 +13,6 @@ const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { productSchema} = require("./schema.js");
 
-
-
 const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
 const flash = require("connect-flash");
@@ -25,7 +23,6 @@ const User = require("./models/user.js");
 const productRouter = require("./routes/product.js");
 const userRouter = require("./routes/user.js")
 const dbUrl = process.env.ATLASDB_URL;
-
 
 main()
  .then(() => {

@@ -20,10 +20,10 @@ const storage = new CloudinaryStorage({
     cloudinary,
     params: {
         folder: "stockpilot_DEV",
-        allowed_formats: ["png", "jpg", "jpeg"],
+        allowed_formats: ["png", "jpg", "jpeg", "webp"],
     },
 });
-
+6
 module.exports = {
     cloudinary,
     storage,
