@@ -14,7 +14,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const { productSchema} = require("./schema.js");
 
 const session = require("express-session");
-const MongoStore = require("connect-mongo").default;
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -55,8 +55,8 @@ const store = MongoStore.create({
 
 store.on("error", (err) => {
    console.log("ERROR in MONGO SESSION STORE", err);
-
 });
+
 
 const sessionOptions = {
   store,
@@ -69,8 +69,6 @@ const sessionOptions = {
         httpOnly: true,
     },
 };
-
-
 
 
 
@@ -91,6 +89,10 @@ app.use((req, res, next) => {
     next();
 });
  
+app.get("/", (req,res) => {
+    res.redirect("/products");
+});
+
 
 app.use("/products", productRouter);
 app.use("/", userRouter);
